@@ -1,8 +1,8 @@
 /*Programme de calcul de moyenne
 Programmeur : ADAMAH Kouevi Joseph
-Objectif: Dévéllopper ma conaissance en c (Sous programme)
-Début : 26 Janvier à 23h
-Fin : 27 Janvier à 1h00*/
+Objectif: DÃ©vÃ©llopper ma conaissance en c (Sous programme)
+DÃ©but : 26 Janvier Ã  23h
+Fin : 27 Janvier Ã  1h00*/
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -18,7 +18,7 @@ float priseNote()
 {
     printf("\nQuel est le nombre des etudiants de la classe ?\n\n");
     scanf("%d",&nbreEtudiant);
-    printf("\nChaque etudiant a combien de note (c'ect à dire le nombre des matiers) ?\n");
+    printf("\nChaque etudiant a combien de note (c'ect Ã  dire le nombre des matiers) ?\n");
     scanf("%d",&nbreNote);
     for (i=1; i<=nbreEtudiant; i++)
     {
@@ -45,29 +45,28 @@ float CalculMoyenne()
 
     for(j=1; j<=nbreEtudiant; j++)
     {
-        printf("\nLa somme des notes de l'étudiant %d est %f : \n\n",j,sommeNote[j]);
+        printf("\nLa somme des notes de l'Ã©tudiant %d est %f : \n\n",j,sommeNote[j]);
     }
 
     for (i=1; i<=nbreEtudiant; i++)
     {
         moyenne[i] = (sommeNote[i]/nbreNote);
-        printf("\nMoyenne de l'étudiant %d est : %.2f\n\n",i,moyenne[i]);
+        printf("\nMoyenne de l'Ã©tudiant %d est : %.2f\n\n",i,moyenne[i]);
 
     }
 
     return moyenne[100];
 }
-
+// Cette fonction permet de classer la moyenne et affiche les rÃ©sultats par ordre de mÃ©rite 
 float Clasification()
 {
-    float moyenneComparaison[100];
-    float classification[100];
-// Tableau à manipuler pour la recherche du premier jusqu'au dernier
-    float plusGrand,echangeur;
+    float moyenneComparaison[100]; // Tableau Ã  manipuler pour la recherche du premier jusqu'au dernier
+    float classification[100]; // Tableau dans lequel nous allons classer les rÃ©sultats 
+    float plusGrand,echangeur; // Les variables qui vont nous permet de rechercher Ã  chaque fois la moyenne la plus grande 
     int cpt;
     for(i=1; i<=nbreEtudiant; i++)
     {
-// Ici j'ai affecté les valeur du tableau de des moyenne à moyenneComparaison pour éviter de manipuler le tab des moyenne
+// Ici j'ai juste affectÃ© les valeur du tableau de des moyenne Ã  moyenneComparaison pour Ã©viter de manipuler le tab des moyenne
         moyenneComparaison[i]=moyenne[i];
     }
 
@@ -87,14 +86,14 @@ float Clasification()
         }
         classification[cpt] = plusGrand;
     }
-    // Proclamation des résultats
+    // Proclamation des rÃ©sultats
     for(i=1; i<=nbreEtudiant; i++)
     {
         for(j=1;j<= nbreEtudiant;j++)
         {
             if(classification[i] == moyenne [j])
             {
-                printf("\nLe %d est l'étudiant %d avec la moyenne %.2f\n",i,j,classification[i]);
+                printf("\nLe %d est l'Ã©tudiant %d avec la moyenne %.2f\n",i,j,classification[i]);
             }
         }
 
@@ -102,6 +101,7 @@ float Clasification()
 
     return classification[100];
 }
+// La fonction principale
 int main()
 {
     int decision;
